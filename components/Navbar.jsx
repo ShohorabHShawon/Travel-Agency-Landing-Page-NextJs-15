@@ -18,7 +18,7 @@ function Navbar() {
     <div className="fixed top-0 left-0 w-full z-50 text-black md:p-2 font-medium bg-white/5 backdrop-blur-md border-b border-gray-200/30 shadow-sm">
       <nav className="flex flex-col lg:flex-row justify-between items-center max-w-5xl mx-auto px-4 py-2">
         <div className="flex items-center space-x-6 w-full lg:w-auto justify-between">
-          <Link href="#" className="text-3xl md:text-4xl">
+          <Link href="#home" className="text-3xl md:text-4xl">
             <h1 className="text-green-800 font-extrabold hover:text-green-700 uppercase">
               Travoo
             </h1>
@@ -26,7 +26,7 @@ function Navbar() {
           <button onClick={toggleMenu} className="lg:hidden focus:outline-none">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 text-black"
+              className="h-6 w-6 text-green-800 hover:text-green-700"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -50,16 +50,16 @@ function Navbar() {
               Destinations
             </Link>
             <Link
-              href="#hotels"
+              href="#services"
               className="text-md hover:bg-green-800 hover:text-white px-3 py-1 rounded-md ease-in-out duration-300"
             >
-              Hotels
+              Service
             </Link>
             <Link
-              href="#menu"
+              href="#offers"
               className="text-md hover:bg-green-800 hover:text-white px-3 py-1 rounded-md ease-in-out duration-300"
             >
-              Flights
+              Offers
             </Link>
             <Link
               href="#booking"
@@ -68,16 +68,16 @@ function Navbar() {
               Bookings
             </Link>
             <Link
-              href="#review"
+              href="#contact"
               className="text-md hover:bg-green-800 hover:text-white px-3 py-1 rounded-md ease-in-out duration-300"
             >
-              Login
+              Contact Us
             </Link>
             <Link
-              href="#contact"
+              href="#login"
               className="text-md text-black px-3 py-1 border hover:border-green-700 hover:bg-green-700 hover:text-white rounded-md ease-in-out duration-300"
             >
-              Sign up
+              Login
             </Link>
           </div>
         </div>
@@ -94,32 +94,32 @@ function Navbar() {
             Home
           </Link>
           <Link
-            href="#about"
+            href="#destinations"
             className="block hover:underline"
             onClick={closeMenu}
           >
-            About
+            Destinations
           </Link>
           <Link
-            href="#menu"
+            href="#services"
             className="block hover:underline"
             onClick={closeMenu}
           >
-            Menu
+            Service
+          </Link>
+          <Link
+            href="#offers"
+            className="block hover:underline"
+            onClick={closeMenu}
+          >
+            Offers
           </Link>
           <Link
             href="#booking"
             className="block hover:underline"
             onClick={closeMenu}
           >
-            Book
-          </Link>
-          <Link
-            href="#review"
-            className="block hover:underline"
-            onClick={closeMenu}
-          >
-            Review
+            Booking
           </Link>
           <Link
             href="#contact"
@@ -129,8 +129,8 @@ function Navbar() {
             Contact
           </Link>
           <Link
-            href="/login"
-            className="bg-gray-200 rounded-md font-bold px-4 py-2 inline-block mt-4"
+            href="/"
+            className="bg-green-800 text-white rounded-md font-bold px-4 py-2 inline-block mt-4"
             onClick={closeMenu}
           >
             Login

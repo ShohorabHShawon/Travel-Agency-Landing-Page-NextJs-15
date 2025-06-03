@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <main className="min-h-screen font-[family-name:var(--font-geist-sans)]">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center">
+      <section id="#home" className="relative h-screen flex items-center">
         <div className="absolute inset-0 z-0 w-full h-full">
           <Image
             src="/hero.jpg"
@@ -14,26 +14,53 @@ export default function Home() {
             className="object-cover brightness-75"
           />
         </div>
-        <div className="container mx-auto px-8 max-w-5xl relative z-10 text-white">
-          <h1 className="container max-w-7xl text-4xl md:text-7xl font-bold mb-6">
+        <div className="container mx-auto px-8 max-w-5xl relative z-15 text-white">
+          <h1 className="container max-w-7xl text-6xl md:text-8xl font-bold mb-6">
             Discover Your Dream Destination
           </h1>
-          <p className="text-lg md:text-xl mb-8 max-w-xl">
+          <p className="text-xl md:text-2xl mb-8 max-w-xl">
             Experience unforgettable journeys to the world's most breathtaking
             locations.
           </p>
           <a
             href="#booking"
-            className="bg-green-800 hover:bg-green-700 text-white px-5 py-3 rounded-lg text-base font-medium transition-colors inline-block"
+            className="bg-green-800 hover:bg-green-700 text-white px-5 py-3 rounded-lg text-base transition-colors inline-block font-bold"
           >
             Book Now
             <span className="ml-2">→</span>
           </a>
         </div>
       </section>
+      {/* Popular Destinations */}
+      <section id="destinations" className="py-20">
+        <div className="container mx-auto px-8 max-w-5xl">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-16">
+            Popular Destinations
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {['Bali', 'Paris', 'Tokyo'].map((destination, index) => (
+              <div
+                key={index}
+                className="group relative h-80 rounded-xl overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors z-10"></div>
+                <Image
+                  src={`/destination-${index + 1}.jpg`}
+                  alt={destination}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute bottom-0 left-0 p-6 z-20 text-white">
+                  <h3 className="text-xl font-bold">{destination}</h3>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
       {/* Services Section */}
       <section
-        id=""
+        id="services"
         className="py-20 bg-gradient-to-r from-gray-50 to-gray-100"
       >
         <div className="container mx-auto px-8 max-w-5xl">
@@ -79,35 +106,12 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* Popular Destinations */}
-      <section id="destinations" className="py-20">
-        <div className="container mx-auto px-8 max-w-5xl">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-16">
-            Popular Destinations
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {['Bali', 'Paris', 'Tokyo'].map((destination, index) => (
-              <div
-                key={index}
-                className="group relative h-80 rounded-xl overflow-hidden"
-              >
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors z-10"></div>
-                <Image
-                  src={`/destination-${index + 1}.jpg`}
-                  alt={destination}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute bottom-0 left-0 p-6 z-20 text-white">
-                  <h3 className="text-xl font-bold">{destination}</h3>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
       {/* Special Offers */}
-      <section className="py-20 bg-gradient-to-r from-blue-50 to-purple-50">
+      <section
+        id="offers"
+        className="py-20 bg-gradient-to-r from-blue-50 to-purple-50"
+      >
         <div className="container mx-auto px-8 max-w-5xl">
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-16">
             Special Offers
@@ -326,49 +330,51 @@ export default function Home() {
         </div>
       </section>
       {/* Footer */}
-      <footer className="bg-green-800 text-gray-100 py-12">
-        <div className="container mx-auto px-8 max-w-5xl">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <h3 className="text-lg font-bold mb-4">TravelAgency</h3>
-              <p className="text-gray-100">Your journey begins with us.</p>
-            </div>
-            <div>
-              <h4 className="text-base font-medium mb-4">Quick Links</h4>
-              <ul className="space-y-2 text-gray-100">
-                <li>Destinations</li>
-                <li>Services</li>
-                <li>About Us</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-base font-medium mb-4">Contact</h4>
-              <ul className="space-y-2 text-gray-100">
-                <li>info@travelagency.com</li>
-                <li>+1 (555) 123-4567</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-base font-medium mb-4">Follow Us</h4>
-              <div className="flex space-x-4">
-                {['Facebook', 'Twitter', 'Instagram'].map((social, index) => (
-                  <span
-                    key={index}
-                    className="text-gray-100 cursor-pointer hover:text-white transition-colors"
-                  >
-                    {social}
-                  </span>
-                ))}
+      <section id="contact">
+        <footer className="bg-green-800 text-gray-100 py-12">
+          <div className="container mx-auto px-8 max-w-5xl">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              <div>
+                <h3 className="text-lg font-bold mb-4">TravelAgency</h3>
+                <p className="text-gray-100">Your journey begins with us.</p>
+              </div>
+              <div>
+                <h4 className="text-base font-medium mb-4">Quick Links</h4>
+                <ul className="space-y-2 text-gray-100">
+                  <li>Destinations</li>
+                  <li>Services</li>
+                  <li>About Us</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-base font-medium mb-4">Contact</h4>
+                <ul className="space-y-2 text-gray-100">
+                  <li>info@travelagency.com</li>
+                  <li>+1 (555) 123-4567</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-base font-medium mb-4">Follow Us</h4>
+                <div className="flex space-x-4">
+                  {['Facebook', 'Twitter', 'Instagram'].map((social, index) => (
+                    <span
+                      key={index}
+                      className="text-gray-100 cursor-pointer hover:text-white transition-colors"
+                    >
+                      {social}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
+            <div className="border-t border-gray-text-gray-100 mt-12 pt-8 text-center text-gray-100">
+              <p>
+                © {new Date().getFullYear()} TravelAgency. All rights reserved.
+              </p>
+            </div>
           </div>
-          <div className="border-t border-gray-text-gray-100 mt-12 pt-8 text-center text-gray-100">
-            <p>
-              © {new Date().getFullYear()} TravelAgency. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
+        </footer>
+      </section>
     </main>
   );
 }
