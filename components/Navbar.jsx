@@ -71,7 +71,7 @@ function Navbar() {
               href="#contact"
               className="text-md hover:bg-green-800 hover:text-white px-3 py-1 rounded-md ease-in-out duration-300"
             >
-              Contact Us
+              Contact
             </Link>
             <Link
               href="#login"

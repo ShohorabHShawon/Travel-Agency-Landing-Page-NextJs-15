@@ -14,11 +14,11 @@ export default function Home() {
             className="object-cover brightness-75"
           />
         </div>
-        <div className="container mx-auto px-8 max-w-5xl relative z-15 text-white">
-          <h1 className="container max-w-7xl text-6xl md:text-8xl font-bold mb-6">
+        <div className="container mx-auto px-3 md:px-8 max-w-5xl relative z-15 text-white">
+          <h1 className="container max-w-7xl text-4xl md:text-8xl font-bold mb-6">
             Discover Your Dream Destination
           </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-xl">
+          <p className="text-lg md:text-2xl mb-8 max-w-xl">
             Experience unforgettable journeys to the world's most breathtaking
             locations.
           </p>
